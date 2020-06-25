@@ -118,9 +118,9 @@ class CBAM(nn.Module):
             x_out = self.SpatialGate(x_out)
         return x_out
 
-class PVRNet(nn.Module):
+class MANet(nn.Module):
     def __init__(self, n_classes=40,init_weights=True):
-        super(PVRNet, self).__init__()
+        super(MANet, self).__init__()
 
         self.fea_dim = 1024
         self.num_bottleneck = 512
@@ -178,22 +178,22 @@ class PVRNet(nn.Module):
     def init_mvcnn(self):
         print(f'init parameter from mvcnn {config.base_model_name}')
         mvcnn_state_dict = torch.load(config.view_net.ckpt_load_file)['model']
-        pvrnet_state_dict = self.state_dict()
+        manet_state_dict = self.state_dict()
 
         mvcnn_state_dict = {k.replace('features', 'mvcnn', 1): v for k, v in mvcnn_state_dict.items()}
-        mvcnn_state_dict = {k: v for k, v in mvcnn_state_dict.items() if k in pvrnet_state_dict.keys()}
-        pvrnet_state_dict.update(mvcnn_state_dict)
-        self.load_state_dict(pvrnet_state_dict)
+        mvcnn_state_dict = {k: v for k, v in mvcnn_state_dict.items() if k in manet_state_dict.keys()}
+        manet_state_dict.update(mvcnn_state_dict)
+        self.load_state_dict(manet_state_dict)
         print(f'load ckpt from {config.view_net.ckpt_load_file}')
 
     def init_gapnet(self):
         print(f'init parameter from gapnet')
         gapnet_state_dict = torch.load(config.pc_net.ckpt_argfile)['model']
-        pvrnet_state_dict = self.state_dict()
+        manet_state_dict = self.state_dict()
 
         gapnet_state_dict = {k: v for k, v in gapnet_state_dict.items() if k in pvrnet_state_dict.keys()}
-        pvrnet_state_dict.update(gapnet_state_dict)
-        self.load_state_dict(pvrnet_state_dict)
+        manet_state_dict.update(gapnet_state_dict)
+        self.load_state_dict(manet_state_dict)
         print(f'load ckpt from {config.pc_net.ckpt_argfile}')
 
 
