@@ -5,7 +5,7 @@ import os.path as osp
 from utils import meter
 from torch import nn
 from torch import optim
-from models import PVRNet
+from models import MANet
 from torch.utils.data import DataLoader
 from datasets import *
 import pdb
@@ -79,7 +79,7 @@ def main():
                             num_workers=config.num_workers,shuffle=True)
 
     # create model
-    net = PVRNet()
+    net = MANet()
     net = torch.nn.DataParallel(net)
     net = net.to(device=config.device)
     optimizer_all = optim.SGD(net.parameters(), config.pv_net.train.all_lr,
