@@ -194,7 +194,7 @@ class MANet(nn.Module):
         mvcnn_state_dict = {k.replace('features', 'mvcnn', 1): v for k, v in mvcnn_state_dict.items()}
         mvcnn_state_dict = {k: v for k, v in mvcnn_state_dict.items() if k in manet_state_dict.keys()}
         manet_state_dict.update(mvcnn_state_dict)
-        self.load_state_dict(pvrnet_state_dict)
+        self.load_state_dict(manet_state_dict)
         print(f'load ckpt from {config.view_net.ckpt_load_file}')
 
     def init_gapnet(self):
