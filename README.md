@@ -35,7 +35,7 @@ Code is tested under the environment of Pytorch 0.4.1, Python 3.6 and CUDA 9.0  
 
 Download data and our pretrained ckpt from above links. Create dir for data as well as result, and place them under corresponding dirs(./data/ and ./result/ckpt/).
 
-'''
+```
 mkdir -p data result/ckpt
-'''
+```
 
