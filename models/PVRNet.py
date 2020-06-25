@@ -13,7 +13,7 @@ from torch.autograd import Variable
 import torchvision.models as models
 
 
-#点云中的CBAM模块
+#VNAM
 class BasicConv(nn.Module):
     def __init__(self, in_planes, out_planes, kernel_size, stride=1, padding=0, dilation=1, groups=1, relu=True, bn=True, bias=False):
         super(BasicConv, self).__init__()
@@ -125,9 +125,9 @@ class CBAM(nn.Module):
 
 
 
-class PVRNet(nn.Module):
+class MANet(nn.Module):
     def __init__(self, n_classes=40,init_weights=True):
-        super(PVRNet, self).__init__()
+        super(MANet, self).__init__()
 
         self.fea_dim = 1024
         self.num_bottleneck = 512
