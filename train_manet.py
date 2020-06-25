@@ -3,7 +3,7 @@ import config
 from utils import meter
 from torch import nn
 from torch import optim
-from models import PVRNet
+from models import MANet
 from torch.utils.data import DataLoader
 from datasets import *
 import argparse
@@ -152,7 +152,7 @@ def main():
     epoch_pc = 0
 
     # create model
-    net = PVRNet()
+    net = MANet()
     net = net.to(device=config.device)
     net = nn.DataParallel(net)
 
