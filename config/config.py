@@ -104,7 +104,7 @@ class pv_net:
 
     pre_trained_model = False
     ckpt_file = osp.join(ckpt_folder, f'PVNet2-{base_model_name}.pth')
-    ckpt_load_file = osp.join(ckpt_folder, f'92.99.pth')
+    ckpt_load_file = osp.join(ckpt_folder, f'MANet-save-ckpt.pth')
 
 
     class train:
