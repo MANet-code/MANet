@@ -7,6 +7,7 @@ from models import MANet
 from torch.utils.data import DataLoader
 from datasets import *
 import argparse
+#train
 
 
 def train(train_loader, net, criterion, optimizer, epoch):
