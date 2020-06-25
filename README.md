@@ -24,6 +24,8 @@ Code is tested under the environment of Pytorch 0.4.1, Python 3.6 and CUDA 9.0  
 
 **Pretrained Model:** 
 
+[GAPNet(VNAM)](https://github.com/YaXin-Zhao1996/MANet/blob/master/PCNet-save-arg.pth)
+
 [PVRNet](https://drive.google.com/file/d/1g3Ef68jRSY2mNf54dOeqNFYZTm4cO13d/view)
 
 [MANet](https://drive.google.com/file/d/1vWp1_jdcdO0zjXwiP44LRBM_iN-N7GhY/view?usp=sharing)
