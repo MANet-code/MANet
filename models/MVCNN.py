@@ -195,7 +195,7 @@ class BaseFeatureNet(nn.Module):
             #x.shape torch.Size([384, 64, 55, 55]
             #x = self.cbam(x)
         x = self.features[1:](x)
-        print(x.shape)
+        #print(x.shape)
         #x.shape torch.Size([384, 256, 6, 6])
         x = x.view(x.size(0), -1)
         x = self.fc_features(x) if self.fc_features is not None else x
