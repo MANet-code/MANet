@@ -38,6 +38,7 @@ def validate(val_loader, net, epoch):
         retrieval_map.add(fts.detach()/torch.norm(fts.detach(), 2, 1, True), labels.detach())
         for j in range(views.size(0)):
             total_seen_class[labels.data[j]] += 1
+            preds.data = preds.data.cpu()
             total_right_class[labels.data[j]] += (np.argmax(preds.data,1)[j] == labels.cpu()[j])
 
 
