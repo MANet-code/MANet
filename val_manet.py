@@ -9,6 +9,9 @@ from models import MANet
 from torch.utils.data import DataLoader
 from datasets import *
 import pdb
+import time
+
+
 
 def validate(val_loader, net, epoch):
     """
@@ -111,5 +114,9 @@ def main():
 
 
 if __name__ == '__main__':
+    start_time = time.time()
     main()
+    end_time = time.time()
+    run_time = end_time - start_time   
+    print('run_time: ', run_time)
 
