@@ -9,8 +9,8 @@ version_string  = '0.1'
 # device can be "cuda" or "gpu"
 device = 'cuda'
 num_workers = 0
-available_gpus = '0'
-# available_gpus = '0,1,2,3'
+#available_gpus = '0'
+available_gpus = '0,2,3'
 print_freq = 15
 
 work_root = os.getcwd()
