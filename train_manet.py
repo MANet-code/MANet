@@ -277,5 +277,9 @@ def main():
 
 
 if __name__ == '__main__':
+    start1_time = time.time()
     main()
+    end1_time = time.time()
+    run1_time = end1_time - start1_time   
+    print('train_run_time: ', run1_time)
 
