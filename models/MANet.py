@@ -191,7 +191,7 @@ class MANet(nn.Module):
         gapnet_state_dict = torch.load(config.pc_net.ckpt_argfile)['model']
         manet_state_dict = self.state_dict()
 
-        gapnet_state_dict = {k: v for k, v in gapnet_state_dict.items() if k in pvrnet_state_dict.keys()}
+        gapnet_state_dict = {k: v for k, v in gapnet_state_dict.items() if k in manet_state_dict.keys()}
         manet_state_dict.update(gapnet_state_dict)
         self.load_state_dict(manet_state_dict)
         print(f'load ckpt from {config.pc_net.ckpt_argfile}')
