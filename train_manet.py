@@ -207,7 +207,7 @@ def main():
     criterion = nn.CrossEntropyLoss()
     criterion = criterion.to(device=config.device)
 
-    for epoch in range(resume_epoch, 110):
+    for epoch in range(resume_epoch, total_epoch):
 
 
         if config.pv_net.train.iter_train == True:
