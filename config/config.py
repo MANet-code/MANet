@@ -8,7 +8,7 @@ version_string  = '0.1'
 
 # device can be "cuda" or "gpu"
 device = 'cuda'
-num_workers = 0
+num_workers = 4
 #available_gpus = '0'
 available_gpus = '0,2,3'
 print_freq = 15
